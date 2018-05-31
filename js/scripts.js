@@ -1,5 +1,6 @@
 $(document).ready(function() {
   $("form#buttons").submit(function(){
+      event.preventDefault();
     var answer1 = parseInt($("input:radio[name=q1]:checked").val());
     var answer2 = parseInt($("input:radio[name=q2]:checked").val());
     var answer3 = parseInt($("input:radio[name=q3]:checked").val());
@@ -9,23 +10,18 @@ $(document).ready(function() {
     console.log(result);
 
     if (result <= 5) {
-      alert("caddy");
-      result.empty();
-      // show("img/caddy.jpeg")
+      $("#caddy").show();
     } else if (result > 5 && result <= 10) {
-      alert("zissou");
-      result.empty();
+      $("#zissou").show();
     } else if (result > 10 && result <= 15) {
-      alert("groundhog");
-      result.empty();
+      $("#groundhog").show();
     } else if (result > 15 && result <= 20){
-      alert("ghostbusters");
-      result.empty();
+      $("#ghost").show();
     } else {
       alert("you missed one!");
     }
 
-    event.preventDefault();
+
 
   });
 });
