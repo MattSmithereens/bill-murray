@@ -8,17 +8,26 @@ $(document).ready(function() {
     var result = (answer1+answer2+answer3+answer4+answer5)
     console.log(result);
 
-    if (result >= 4) {
+    if (result <= 5) {
       alert("caddy");
+      result.empty();
       // show("img/caddy.jpeg")
-    } else if (result < 4 && => 8)
-      alert("zissou");{
-    } else if (result < 8 && => 12)
-      alert("groundhog"); {
-
+    } else if (result > 5 && result <= 10) {
+      alert("zissou");
+      result.empty();
+    } else if (result > 10 && result <= 15) {
+      alert("groundhog");
+      result.empty();
+    } else if (result > 15 && result <= 20){
+      alert("ghostbusters");
+      result.empty();
+    } else {
+      alert("you missed one!");
     }
 
     event.preventDefault();
 
   });
 });
+
+// (result < 12 && result => 16)
